@@ -21,6 +21,9 @@ class Database{
     //conexao
     private $connection;
 
+
+
+    //construct da tabela
     public function __construct($table = null)
     {
         $this->table = $table;
@@ -47,16 +50,27 @@ class Database{
 
 
 
-    //metodo para inserir dados ta tabela
+    //metodo para inserir dados na tabela
+
+    /*os dados serao chamados de $values, mas poderiam
+    ter outra denominação*/
     public function insert(array $values){
 
-        //dados da query -> PAUSA!!!
-        $fields= array_keys($values);
-        echo ("Valores: ");
-        echo "<pre>"; print_r($values); echo "</pre>"; exit;
+        //dados da query 
+
+        //os fields irão receber os dados de toda a tabela
+        $fields = array_keys($values);
+
+
+
+        /*echo ("Valores: ");
+        echo "<pre>"; print_r($fields); echo "</pre>"; exit;*/
 
         //a query
         $query = ('INSERT INTO '. $this->table .' (nome, email, senha) VALUES (?, ?, ?)');
+        echo $query;
+        exit;
+
     }
 }
 
