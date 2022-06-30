@@ -1,10 +1,13 @@
 <?php
 
+
+
 namespace App\db;
 
 use Exception;
 use \PDO;
 use PDOException;
+
 
 class Database{
 
